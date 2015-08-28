@@ -1,0 +1,37 @@
+useDynLib("KERE")
+
+import("methods")
+
+export(KERE,
+cv.KERE,
+predict.KERE,
+
+## kernel functions
+"rbfdot",
+"laplacedot",
+"besseldot",
+"polydot",
+"tanhdot",
+"vanilladot",
+"anovadot",
+"splinedot",
+"kernelMatrix",
+"kernelMult",
+"kernelPol",
+"kernelFast",
+"as.kernelMatrix",
+"kpar"
+)
+
+importFrom("grDevices", "gray.colors")
+  importFrom("graphics", "matplot", "segments")
+  importFrom("stats", "na.omit")
+
+S3method("plot","KERE")
+S3method("predict","KERE")
+
+
+exportClasses("kernel", "rbfkernel", "laplacekernel",
+              "besselkernel", "tanhkernel", "polykernel","fourierkernel",
+              "vanillakernel", "anovakernel", "splinekernel",
+              "kernelMatrix","kfunction")
